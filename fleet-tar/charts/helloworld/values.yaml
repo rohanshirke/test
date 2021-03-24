@@ -1,0 +1,17 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: nginx
+  tag: stable
+ingress:
+  annotations: null
+  enabled: false
+  hosts:
+  - chart-example.local
+  tls: null
+replicaCount: 1
+resources: {}
+service:
+  externalPort: 80
+  internalPort: 80
+  name: nginx
+  type: ClusterIP
