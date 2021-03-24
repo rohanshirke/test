@@ -1,0 +1,75 @@
+PodDisruptionBudget:
+  enable: false
+affinity: {}
+autoscaling:
+  enabled: false
+  maxReplicas: 7
+  minReplicas: 1
+  targetCPUUtilizationPercentage: 80
+config: |
+  global
+    log stdout format raw local0
+    maxconn 1024
+
+  defaults
+    log global
+    timeout client 60s
+    timeout connect 60s
+    timeout server 60s
+
+  frontend fe_main
+    bind :80
+    default_backend be_main
+
+  backend be_main
+    server web1 10.0.0.1:8080 check
+containerPorts:
+  http: 80
+  https: 443
+  stat: 1024
+daemonset:
+  hostPorts:
+    http: 80
+    https: 443
+    stat: 1024
+  useHostNetwork: false
+  useHostPort: false
+dnsConfig: {}
+dnsPolicy: ClusterFirst
+existingImagePullSecret: null
+image:
+  pullPolicy: IfNotPresent
+  repository: haproxytech/haproxy-alpine
+  tag: '{{ .Chart.AppVersion }}'
+imageCredentials:
+  password: null
+  registry: null
+  username: null
+initContainers: []
+kind: Deployment
+nodeSelector: {}
+podAnnotations: {}
+podLabels: {}
+podSecurityContext: {}
+priorityClassName: ""
+replicaCount: 1
+requests:
+  cpu: 100m
+  memory: 64Mi
+resources: null
+securityContext:
+  enabled: false
+  runAsGroup: 1000
+  runAsUser: 1000
+service:
+  annotations: {}
+  clusterIP: ""
+  loadBalancerIP: ""
+  loadBalancerSourceRanges: []
+  type: ClusterIP
+serviceAccount:
+  create: true
+  name: null
+strategy: {}
+terminationGracePeriodSeconds: 60
+tolerations: []

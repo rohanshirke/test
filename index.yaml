@@ -1,32 +1,11 @@
 apiVersion: v1
 entries:
-  haproxy:
+  testing:
   - apiVersion: v1
-    appVersion: 2.3.6
-    created: "2021-03-23T20:59:39.788007-05:00"
-    description: A Helm chart for HAProxy on Kubernetes
-    digest: cdedf73423db7c46510801a8390e4695eb59b0e10d7086ab592d40a24fa2b420
-    home: https://github.com/haproxytech/helm-charts/tree/master/haproxy
-    icon: http://www.haproxy.org/img/HAProxyCommunityEdition_60px.png
-    keywords:
-    - haproxy
-    kubeVersion: '>=1.12.0-0'
-    maintainers:
-    - email: dkorunic@haproxy.com
-      name: Dinko Korunic
-    name: haproxy
-    sources:
-    - http://www.haproxy.org/
+    created: "2021-03-23T21:27:58.524957-05:00"
+    digest: 1736f3e266aec766a9573725629b65bcfee718d785ad6350b7b82219f6707f1a
+    name: testing
     urls:
-    - fleet-tar-haproxy.tgz
-    version: 1.1.4
-  helloworld-chart:
-  - apiVersion: v1
-    created: "2021-03-23T20:59:39.788657-05:00"
-    description: A Helm chart for Kubernetes
-    digest: 9466439f69e5a3ebce643c4805a77e52aa96f30635cef4526c303b2588b349af
-    name: helloworld-chart
-    urls:
-    - fleet-tar-helloworld.tgz
-    version: 0.1.0
-generated: "2021-03-23T20:59:39.783452-05:00"
+    - testing-1.0.0.tgz
+    version: 1.0.0
+generated: "2021-03-23T21:27:58.522545-05:00"
