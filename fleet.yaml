@@ -1,6 +1,5 @@
 helm:
-  repo: https://rohanshirke.github.io/test
-  chart: testing
+  chart: https://thecrazyrussian.github.io/test/testing-1.0.0.tgz 
   releaseName: testing
   version: 1.0.0
   values:
