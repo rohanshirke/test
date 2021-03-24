@@ -1,0 +1,18 @@
+helm:
+  repo: https://rohanshirke.github.io/test
+  chart: testing
+  releaseName: testing
+  version: 1.0.0
+  values:
+    haproxy:
+      enabled: true
+    helloworld:
+      enabled: true
+targetCustomizations:
+- name: test-tar-deployment1
+  helm:
+    values:
+      replication: false
+  clusterSelector:
+    matchLabels:
+      name: sandbox-vesa-aws-us-west-2-wl1-sfo-wlz-1
